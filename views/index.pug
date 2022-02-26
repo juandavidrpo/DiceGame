@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  form(action='/create-gamer' method="POST")
+    h1= "Juego de dados"
+
+    div
+      input(type="text", id="name", name="name1", placeholder="Jugador 1" required)
+      input(type="text" id="gamer2" name="name2" placeholder="Jugador 2" required)
+      input(type="text" id="gamer3" name="name3" placeholder="Jugador 3" required)
+    div
+      input(type="submit" value="Registrar y jugar" id="view")

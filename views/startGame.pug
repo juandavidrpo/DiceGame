@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+  form(action='/startGame' method="POST")
+    h1= "Juego de dados"
+    p="El número del dado es aleatorio"
+
+    //div
+      input(type="text", id="bet1", name="bet1", placeholder="Apuesta 1" required)
+      input(type="text" id="bet2" name="bet2" placeholder="Apuesta 2" required)
+      input(type="text" id="bet3" name="bet3" placeholder="Apuesta 3" required)
+    div
+      button(type="submit" value="") Iniciar juego
