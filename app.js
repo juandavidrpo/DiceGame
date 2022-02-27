@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-
 //conexión a mongo
 const mongodb = 'mongodb://localhost/game';
 mongoose
@@ -26,7 +25,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 //rutas
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
@@ -34,7 +32,6 @@ app.use('/create-gamer', require('./routes/create-gamer'));
 app.use('/status', require('./routes/gameStatus'));
 app.use('/winner', require('./routes/winner'));
 app.use('/startgame', require('./routes/startGame'));
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
