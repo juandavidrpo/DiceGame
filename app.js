@@ -27,11 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //rutas
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-app.use('/create-gamer', require('./routes/create-gamer'));
+app.use('/create-game', require('./routes/createGame'));
 app.use('/status', require('./routes/gameStatus'));
 app.use('/winner', require('./routes/winner'));
-app.use('/startgame', require('./routes/startGame'));
+app.use('/startGame', require('./routes/startGame'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

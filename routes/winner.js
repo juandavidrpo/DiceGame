@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/user');
+const Game = require('../models/Game');
 
 router.get('/', (req, res) => {
-    User.findOne(req)
+    Game.findOne(req)
         .sort({ bet: -1 })
         .then((result) => res.json(result))
         .catch((err) => res.json(err));
-});
+}); 
 
 module.exports = router;
