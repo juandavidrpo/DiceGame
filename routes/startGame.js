@@ -3,14 +3,22 @@ const router = express.Router();
 
 const Game = require('../models/Game');
 
+/**
+ * @version 1.0.0 2022-03-01
+ * @author Juan David Rojas.
+ */
 router.get('/', function (req, res, next) {
     res.render('startGame');
 });
 
+/**
+ * Representa la función para generar la apuesta de
+ * cada jugador de forma aleatoria y lo guarda en la
+ * base de datos.
+ */
 router.put('/bet/:id', async function (req, res) {
     try {
         const id = req.params.id;
-        const data = req.body;
         const game = await Game.findById(id);
         const bet = [];
 
@@ -20,7 +28,7 @@ router.put('/bet/:id', async function (req, res) {
             bet.push(gamerBet);
         });
 
-        game.set({ bet, inProgess: true });
+        game.set({ bet, inProgress: true });
         const result = await game.save();
 
         res.json(result);
